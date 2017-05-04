@@ -1,12 +1,17 @@
 package com.example.lenovo.myapp;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * Created by LENOVO on 03.05.2017.
@@ -36,16 +41,42 @@ public class CountryViewHolder extends RecyclerView.ViewHolder {
         // lNameTv.setText(lNameTv != null ? user.getlName() : "");
         //genderTv.setText(genderTv != null ? user.getGender() : "");
 
-
         context=itemView.getContext();
-        int resourceId = context.getResources().getIdentifier("s_flag_" + country.getCode(), "drawable",context.getApplicationContext().getPackageName());
 
-        if (resourceId > 0) {
-            arrowView.setImageResource(resourceId);
-        } else {
-            arrowView.setImageResource(R.drawable.s_flag_ad);
-            // Do something is the resource does not exist
+
+
+
+
+
+        AssetManager assetManager=context.getAssets();
+
+
+        try {
+
+            // get input stream
+            InputStream ims = assetManager.open("s_flag_" + country.getCode()+".png");
+            // create drawable from stream
+            Drawable d = Drawable.createFromStream(ims, null);
+
+            // set the drawable to imageview
+
+            arrowView.setImageDrawable(d);        }
+
+        catch(IOException ex) {
+
+            return;
+
         }
+
+
+//        int resourceId = context.getResources().getIdentifier("s_flag_" + country.getCode(), "drawable",context.getApplicationContext().getPackageName());
+//
+//        if (resourceId > 0) {
+//            arrowView.setImageResource(resourceId);
+//        } else {
+//            arrowView.setImageResource(R.drawable.s_flag_ad);
+//            // Do something is the resource does not exist
+//        }
 
         if (country.isSelected()){
             checkBox.setChecked(true);
