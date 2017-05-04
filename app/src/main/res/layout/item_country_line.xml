@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="71dp"
+
+    android:orientation="vertical"
+    >
+
+    <android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:background="#cccccc">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/item_country_flag_iv"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:visibility="visible"
+            />
+
+        <TextView
+            android:id="@+id/item_country_name_tv"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Name" />
+
+        <!--<TextView-->
+        <!--android:id="@+id/item_user_code_tv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="20sp"-->
+        <!--android:text="Code" />-->
+
+        <CheckBox
+            android:id="@+id/item_country_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            />
+
+    </LinearLayout>
+
+    <!--<TextView-->
+    <!--android:id="@+id/item_user_gender"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:textSize="20sp"-->
+    <!--android:layout_margin="20dp"-->
+    <!--android:text="M"-->
+    <!--android:layout_alignParentRight="true" />-->
+
+
+    <!--<ImageView-->
+    <!--android:id="@+id/item_user_arrow_iv"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:src="@android:drawable/arrow_up_float"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_alignParentRight="true" />-->
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"/>
+
+</android.support.v7.widget.CardView>
+
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:orientation="vertical"
+    tools:context="com.example.lenovo.myapp.MainActivity">
+
+  <Button
+      android:id="@+id/act_main_btn_list"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="List of Countries"
+      android:layout_gravity="center"
+      />
+
+    <Button
+        android:id="@+id/act_main_btn_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grid of Countries"
+        android:layout_gravity="center"/>
+</LinearLayout>
