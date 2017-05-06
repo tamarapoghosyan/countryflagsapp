@@ -1,6 +1,7 @@
 package com.example.lenovo.myapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
@@ -14,23 +15,20 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by LENOVO on 03.05.2017.
+ * Created by LENOVO on 06.05.2017.
  */
-public class CountryViewHolder extends RecyclerView.ViewHolder {
-
-        Context context;
-
+public class CountryGridViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private TextView nameTv;
-    private ImageView arrowView;
+    private ImageView imageView;
     private CheckBox checkBox;
     private Country country;
+    private Context context;
 
-    public CountryViewHolder(View itemView) {
+    public CountryGridViewHolder(View itemView) {
         super(itemView);
-
-        nameTv = (TextView) itemView.findViewById(R.id.item_country_name_tv);
-        arrowView = (ImageView) itemView.findViewById(R.id.item_country_flag_iv);
-    checkBox=(CheckBox) itemView.findViewById(R.id.item_country_checkbox);
+        nameTv = (TextView) itemView.findViewById(R.id.item_country_grid_name_tv);
+        imageView = (ImageView) itemView.findViewById(R.id.item_country_grid_flag_iv);
+        checkBox=(CheckBox) itemView.findViewById(R.id.item_country_grid_checkbox);
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -40,9 +38,8 @@ public class CountryViewHolder extends RecyclerView.ViewHolder {
                 else country.setSelected(false);
             }
         });
-
+        nameTv.setOnClickListener(this);
     }
-
     public void bind(final Country country){
 
         this.country=country;
@@ -56,38 +53,22 @@ public class CountryViewHolder extends RecyclerView.ViewHolder {
             InputStream ims = assetManager.open("s_flag_" + country.getCode()+".png");
             Drawable d = Drawable.createFromStream(ims, null);
 
-            arrowView.setImageDrawable(d);        }
+            imageView.setImageDrawable(d);        }
 
         catch(IOException ex) {
 
             return;
 
         }
-
-//        int resourceId = context.getResources().getIdentifier("s_flag_" + country.getCode(), "drawable",context.getApplicationContext().getPackageName());
-//
-//        if (resourceId > 0) {
-//            arrowView.setImageResource(resourceId);
-//        } else {
-//            arrowView.setImageResource(R.drawable.s_flag_ad);
-//        }
-
         checkBox.setChecked(country.isSelected());
-//        if (country.isSelected()){
-//            checkBox.setChecked(true);
-//        } else {
-//            checkBox.setChecked(false);
-//        }
-
-
     }
 
+    @Override
+    public void onClick(View v) {
 
+        Intent intent=new Intent(context,ResultActivity.class );
+        intent.putExtra("aaa","s_flag_" + country.getCode()+".png");
+        context.startActivity(intent);
 
-
-
-
-
+    }
 }
-//listview
-//w

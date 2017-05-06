@@ -32,6 +32,8 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:text="Name"
+        android:textAlignment="center"
+        android:clickable="true"
         android:layout_weight="1"/>
 
     <CheckBox

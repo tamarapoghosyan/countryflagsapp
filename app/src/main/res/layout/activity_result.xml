@@ -7,13 +7,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.lenovo.myapp.GridActivity">
+    tools:context="com.example.lenovo.myapp.ResultActivity">
 
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/act_grid_rv"
+    <ImageView
+        android:id="@+id/act_result_imageview"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        />
 </RelativeLayout>

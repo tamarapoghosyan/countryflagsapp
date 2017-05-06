@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnList.setOnClickListener(this);
         btnGrid.setOnClickListener(this);
-
+findViewById(R.id.act_main_btn_rec_grid_int).setOnClickListener(this);
 
     }
 
@@ -70,6 +70,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                // intent.putExtra(EXTRA_MESSAGE,"aaa");
                 MainActivity.this.startActivity(intent);
             break;
+            }
+            case R.id.act_main_btn_rec_grid_int: {
+                Intent intent = new Intent(MainActivity.this, IntGridActivity.class);
+
+                // intent.putExtra(EXTRA_MESSAGE,"aaa");
+                MainActivity.this.startActivity(intent);
+                break;
             }
         }
 
