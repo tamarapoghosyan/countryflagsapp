@@ -37,7 +37,6 @@ public class IntGridActivity extends AppCompatActivity implements View.OnClickLi
 
         buttonScrollDown.setOnClickListener(this);
         buttonScrollUp.setOnClickListener(this);
-
     }
 
     @Override
@@ -45,23 +44,19 @@ public class IntGridActivity extends AppCompatActivity implements View.OnClickLi
         switch(v.getId()){
             case R.id.act_int_grid_btn_scrollup:{
                 if (recyclerView.getAdapter().getItemCount()-recyclerView.getScrollY()>4){
-                    recyclerView.scrollToPosition(recyclerView.getScrollY()-5);
+                   recyclerView.smoothScrollToPosition(0);
                 }
-                else{
+                else
                     buttonScrollUp.setVisibility(View.GONE);
-                }
-//                        recyclerView.getLayoutManager().scrollToPosition(recyclerView.getAdapter().getItemCount() - 1);
-
+                //recyclerView.getLayoutManager().scrollToPosition(recyclerView.getAdapter().getItemCount() - 1);
                // recyclerView.getLayoutManager().smoothScrollToPosition(recyclerView,null,0);
+                //recyclerView.scrollToPosition(recyclerView.getScrollY()-5);
                 break;
-
-            }
+        }
             case R.id.act_int_grid_btn_scrolldown:{
-
-
+            recyclerView.smoothScrollToPosition(recyclerView.getAdapter().getItemCount());
                 break;
             }
         }
-
     }
 }

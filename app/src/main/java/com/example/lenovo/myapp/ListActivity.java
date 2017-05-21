@@ -48,13 +48,6 @@ Context context;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-
-
-
-
-
-
-
         Intent intent=getIntent();
         recyclerView = (RecyclerView) findViewById(R.id.act_list_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
